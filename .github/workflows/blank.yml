@@ -49,4 +49,4 @@ jobs:
             aws-region: us-east-1
             
       - name: send buckets
-        run: aws s3 cp /Proyecto_Prueba/utils.py s3://bucket-big-data1/
+        run: aws s3 cp utils.py s3://bucket-big-data1/
