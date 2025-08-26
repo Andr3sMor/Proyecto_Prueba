@@ -48,5 +48,5 @@ jobs:
             aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
             aws-region: us-east-1
             
-      - name: List buckets
-        run: aws s3 ls
+      - name: send buckets
+        run: aws s3 cp /Proyecto_Prueba/utils.py s3://bucket-big-data1/
