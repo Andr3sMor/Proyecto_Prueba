@@ -12,8 +12,7 @@
         "profile_name": "default",
         "project_name": "proyecto-prueba",
         "runtime": "python3.10",
-        "s3_bucket": "zappa-x5pij1o1m"
-        
+        "s3_bucket": "zappa-x5pij1o1m",
         "keep_warn": false,
         "apigateway": false,
         "manage_roles": false,
