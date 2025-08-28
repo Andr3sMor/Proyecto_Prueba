@@ -51,10 +51,4 @@ jobs:
       - name: Deploy or Update Lambda
         run: |
           source env/bin/activate
-          if zappa status dev | grep -q "could not be found"; then
-            echo "Lambda function not found, deploying..."
-            zappa deploy dev
-          else
-            echo "Lambda function exists, updating..."
-            zappa update dev
-          fi
+          zappa update dev
