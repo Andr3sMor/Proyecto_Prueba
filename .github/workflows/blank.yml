@@ -47,6 +47,14 @@ jobs:
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
             aws-region: us-east-1
-            
-      - name: send buckets
-        run: aws s3 cp utils.py s3://bucket-big-data1/
+        
+      - name: Deploy or Update Lambda
+        run: |
+          source env/bin/activate
+          if zappa status dev | grep -q "could not be found"; then
+            echo "Lambda function not found, deploying..."
+            zappa deploy dev
+          else
+            echo "Lambda function exists, updating..."
+            zappa update dev
+          fi
